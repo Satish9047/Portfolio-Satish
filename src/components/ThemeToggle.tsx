@@ -7,7 +7,7 @@ const ThemeToggleBtn = () => {
   const { isDarkMode, toggleTheme } = useGlobalState();
 
   return (
-    <div>
+    <div className="flex justify-end">
       <button onClick={toggleTheme}>
         {isDarkMode ? (
           <MdOutlineWbSunny className="w-16 h-16 p-4 bg-gray-200 rounded-lg shadow-md" />
