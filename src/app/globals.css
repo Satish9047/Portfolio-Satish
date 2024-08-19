@@ -6,15 +6,34 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 html,
 body,
 #root,
 .app {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   height: 100%;
   width: 100%;
   @apply text-sm;
   @apply bg-gray-50;
   @apply text-gray-900;
+}
+
+.hide-scrollbar {
+  overflow-y: scroll; /* Allow vertical scroll */
+  padding-right: 15px; /* Compensate for the scrollbar width */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

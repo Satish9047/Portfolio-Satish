@@ -5,8 +5,8 @@ import ThemeToggleBtn from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="flex justify-center min-h-screen p-4">
-      <div className="w-full md:w-5/6">
+    <main className="flex items-center justify-center min-h-screen p-4">
+      <div className="w-full md:w-7/12">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-12 ">
           <section className="grid order-2 w-full gap-8 md:col-span-8 md:order-1">
             <div className="space-y-4">
