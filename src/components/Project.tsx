@@ -1,14 +1,27 @@
+// "use client";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { projects } from "@/data/project";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Project = () => {
+  useGSAP(() => {
+    const projectTl = gsap.timeline();
+    projectTl.from(".animateProjectToTop", {
+      y: 50,
+      opacity: 0,
+      duration: 0.2,
+      delay: 0.2,
+      stagger: 0.2,
+    });
+  });
   return (
     <div className="flex flex-col gap-4">
       {projects.map((project) => (
         <div
           key={project.projectName}
-          className="p-4 space-y-4 text-xl text-justify bg-gray-200 rounded-lg shadow-md"
+          className="p-4 space-y-4 text-xl text-justify bg-gray-200 rounded-lg shadow-md animateProjectToTop"
         >
           <h1 className="font-bold ">{project.projectName}</h1>
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row ">

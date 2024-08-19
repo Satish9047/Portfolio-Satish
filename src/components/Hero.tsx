@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
+// import gsap from "gsap";
+// import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
   const name = "Satish Prajapati";
+
   return (
-    <main className="flex flex-col justify-center py-4">
+    <main className="flex flex-col justify-center py-4 ">
       <figure className="w-full h-full py-6">
         <Image
           src="/profile.jpg"
@@ -39,7 +43,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div>
+          <div className="">
             <h3 className="text-2xl ">Experience</h3>
             <div className="px-2 text-lg text-gray-500">
               <div>
