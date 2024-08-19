@@ -1,6 +1,6 @@
 import Hero from "@/components/Hero";
-import Project from "@/components/Project";
 import Skill from "@/components/Skill";
+import Project from "@/components/Project";
 import ThemeToggleBtn from "@/components/ThemeToggle";
 
 export default function Home() {

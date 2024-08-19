@@ -1,6 +1,6 @@
 import React from "react";
-import { projects } from "@/data/project";
 import { FaGithub } from "react-icons/fa";
+import { projects } from "@/data/project";
 
 const Project = () => {
   return (

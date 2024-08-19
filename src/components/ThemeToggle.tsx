@@ -1,6 +1,6 @@
 "use client";
-import { useGlobalState } from "@/zustand/store";
 import React from "react";
+import { useGlobalState } from "@/zustand/store";
 import { MdOutlineWbSunny, MdOutlineNightlight } from "react-icons/md";
 
 const ThemeToggleBtn = () => {
