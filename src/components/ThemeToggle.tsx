@@ -1,15 +1,22 @@
 "use client";
 import { useGlobalState } from "@/zustand/store";
 import React from "react";
+import { MdOutlineWbSunny, MdOutlineNightlight } from "react-icons/md";
 
-const ThemeToggle = () => {
+const ThemeToggleBtn = () => {
   const { isDarkMode, toggleTheme } = useGlobalState();
 
   return (
     <div>
-      <button onClick={toggleTheme}>{isDarkMode ? "light" : "dark"}</button>
+      <button onClick={toggleTheme}>
+        {isDarkMode ? (
+          <MdOutlineWbSunny className="w-16 h-16 p-4 bg-gray-200 rounded-lg shadow-md" />
+        ) : (
+          <MdOutlineNightlight className="w-16 h-16 p-4 bg-gray-200 rounded-lg shadow-md" />
+        )}
+      </button>
     </div>
   );
 };
 
-export default ThemeToggle;
+export default ThemeToggleBtn;
