@@ -11,6 +11,7 @@ const Hero = () => {
           alt="Profile Picture"
           width={250}
           height={250}
+          priority
           className="mx-auto rounded-full"
         />
       </figure>
