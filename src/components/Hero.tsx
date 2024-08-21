@@ -1,14 +1,25 @@
 "use client";
 import React, { useEffect } from "react";
 import Image from "next/image";
-// import gsap from "gsap";
-// import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Hero = () => {
   const name = "Satish Prajapati";
+  useGSAP(() => {
+    const heroTl = gsap.timeline();
+
+    heroTl.from(".animateToTop", {
+      y: 50,
+      opacity: 0,
+      duration: 0.2,
+      delay: 0.2,
+      stagger: 0.2,
+    });
+  });
 
   return (
-    <main className="flex flex-col justify-center py-4 ">
+    <main className="flex flex-col justify-center py-4  bg-gray-200 rounded-md shadow-md animateToTop">
       <figure className="w-full h-full py-6">
         <Image
           src="/profile.jpg"

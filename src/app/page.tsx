@@ -3,8 +3,8 @@ import Hero from "@/components/Hero";
 import Skill from "@/components/Skill";
 import Project from "@/components/Project";
 import ThemeToggleBtn from "@/components/ThemeToggle";
-import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Home() {
   useGSAP(() => {
@@ -14,16 +14,6 @@ export default function Home() {
       opacity: 0,
       duration: 0.2,
       delay: 0,
-    });
-
-    const heroTl = gsap.timeline();
-
-    heroTl.from(".animateToTop", {
-      y: 50,
-      opacity: 0,
-      duration: 0.2,
-      delay: 0.2,
-      stagger: 0.2,
     });
   });
   return (
@@ -53,9 +43,7 @@ export default function Home() {
               <div className="animateToTop">
                 <ThemeToggleBtn />
               </div>
-              <div className="bg-gray-200 rounded-md shadow-md animateToTop">
-                <Hero />
-              </div>
+              <Hero />
             </div>
           </section>
         </div>

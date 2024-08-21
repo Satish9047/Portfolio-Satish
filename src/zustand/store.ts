@@ -9,7 +9,7 @@ interface ThemeState {
 export const useGlobalState = create<ThemeState>()(
   persist(
     (set) => ({
-      isDarkMode: true,
+      isDarkMode: false,
       toggleTheme: () =>
         set((state) => ({
           isDarkMode: !state.isDarkMode,
