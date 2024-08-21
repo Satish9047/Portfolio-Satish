@@ -21,7 +21,7 @@ const Project = () => {
       {projects.map((project) => (
         <div
           key={project.projectName}
-          className="p-4 space-y-4 text-xl text-justify bg-gray-200 rounded-lg shadow-md animateProjectToTop"
+          className="p-4 space-y-4 text-xl text-justify bg-gray-200 rounded-lg shadow-md animateProjectToTop hover:bg-indigo-300"
         >
           <h1 className="font-bold ">{project.projectName}</h1>
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row ">

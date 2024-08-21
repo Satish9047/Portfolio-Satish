@@ -32,7 +32,7 @@ const Hero = () => {
       </figure>
       <div className="px-4 space-y-4 font-semibold text-gray-700">
         <div className="text-xl font-semibold text-center text-gray-500">
-          <h2>{name}</h2>
+          <h2 className="text-2xl text-gray-700">{name}</h2>
           <p>satishprajapati930@gmail.com | 9840252791</p>
           <p className="text-lg">
             Web Developer | Full-Stack Developer | JavaScript Developer
