@@ -15,7 +15,7 @@ export default function Home() {
       duration: 0.2,
       delay: 0,
     });
-  });
+  }, []);
   return (
     <main className="flex items-center justify-center min-h-screen p-4">
       <div className="w-full md:w-7/12">

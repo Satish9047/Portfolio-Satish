@@ -16,7 +16,7 @@ const Hero = () => {
       delay: 0.2,
       stagger: 0.2,
     });
-  });
+  }, []);
 
   return (
     <main className="flex flex-col justify-center py-4  bg-gray-200 rounded-md shadow-md animateToTop">

@@ -15,7 +15,7 @@ const Project = () => {
       delay: 0.2,
       stagger: 0.2,
     });
-  });
+  }, []);
   return (
     <div className="flex flex-col gap-4">
       {projects.map((project) => (

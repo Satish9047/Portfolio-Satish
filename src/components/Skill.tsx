@@ -12,7 +12,7 @@ const Skill = () => {
       duration: 0.07,
       stagger: 0.05,
     });
-  });
+  }, []);
   return (
     <>
       {skills.map((skill) => {
