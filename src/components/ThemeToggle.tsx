@@ -8,7 +8,7 @@ const ThemeToggleBtn = () => {
 
   return (
     <div className="flex justify-end">
-      <button onClick={toggleTheme}>
+      <button onClick={toggleTheme} name="theme-toggle">
         {isDarkMode ? (
           <MdOutlineWbSunny className="w-16 h-16 p-4 bg-gray-200 rounded-lg shadow-md" />
         ) : (

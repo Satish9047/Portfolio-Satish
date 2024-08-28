@@ -61,25 +61,29 @@ const Hero = () => {
                 <h3 className="text-gray-700 underline ">
                   Leapfrog Technology
                 </h3>
-                <li>
-                  <span>Position:</span> Software Development Internship
-                </li>
-                <li>
-                  <span>Duration:</span> 2 Month
-                </li>
-                <li>
-                  <span>Projects Involved:</span> Book sharing website, Doodle
-                  Jump Game, front-end development, backend development
-                </li>
+                <ul>
+                  <li>
+                    <span>Position:</span> Software Development Internship
+                  </li>
+                  <li>
+                    <span>Duration:</span> 2 Month
+                  </li>
+                  <li>
+                    <span>Projects Involved:</span> Book sharing website, Doodle
+                    Jump Game, front-end development, backend development
+                  </li>
+                </ul>
               </div>
               <div>
                 <h3 className="text-gray-700 underline ">Free Lance</h3>
-                <li>
-                  <span>Position:</span> Web Developer
-                </li>
-                <li>
-                  <span>Projects Involved: </span> Portfolio websites
-                </li>
+                <ul>
+                  <li>
+                    <span>Position:</span> Web Developer
+                  </li>
+                  <li>
+                    <span>Projects Involved: </span> Portfolio websites
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
