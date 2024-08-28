@@ -5,8 +5,10 @@ import Project from "@/components/Project";
 import ThemeToggleBtn from "@/components/ThemeToggle";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useState } from "react";
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
   useGSAP(() => {
     const sectionTl = gsap.timeline();
     sectionTl.from(".animateTopicToTop", {
@@ -15,7 +17,15 @@ export default function Home() {
       duration: 0.2,
       delay: 0,
     });
+    setIsLoaded(true);
   }, []);
+
+  if (!isLoaded)
+    return (
+      <div className="w-screen h-screen flex justify-center items-center bg-gray-100">
+        <h1>Loading...</h1>
+      </div>
+    );
   return (
     <main className="flex items-center justify-center min-h-screen p-4">
       <div className="w-full md:w-7/12">
