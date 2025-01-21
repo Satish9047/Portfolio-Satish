@@ -85,6 +85,35 @@ const Hero = () => {
                   </li>
                 </ul>
               </div>
+              <div>
+                <h3 className="text-gray-700 underline ">Procit</h3>
+                <ul>
+                  <li>
+                    <span>Position:</span> Frontend Developer Trainee/Probation
+                  </li>
+                  <li>
+                    <span>Duration:</span> Dec 2st, 2024 - Jan 2nd 2025
+                  </li>
+                  <li>
+                    <span>Projects Involved: </span> Created Demo Todo App with
+                    cross platform support
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-gray-700 underline ">Procit</h3>
+                <ul>
+                  <li>
+                    <span>Position:</span> Frontend Developer
+                  </li>
+                  <li>
+                    <span>Duration:</span> jan 2st, 2025 - Present
+                  </li>
+                  <li>
+                    <span>Projects Involved: </span> SmartFlow
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

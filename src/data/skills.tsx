@@ -5,6 +5,7 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaSass,
+  FaDatabase,
 } from "react-icons/fa";
 import {
   SiExpress,
@@ -17,7 +18,11 @@ import {
   SiRedux,
   SiTailwindcss,
   SiShadcnui,
+  SiSqlite,
+  SiAngular,
+  SiApachecordova,
 } from "react-icons/si";
+import { BsFiletypeSql } from "react-icons/bs";
 export const skills = [
   {
     skillName: "React",
@@ -25,7 +30,7 @@ export const skills = [
   },
   {
     skillName: "Angular",
-    icon: <FaAngular className="w-10 h-10" />,
+    icon: <SiAngular className="w-10 h-10" />,
   },
   {
     skillName: "Node",
@@ -64,6 +69,10 @@ export const skills = [
     icon: <SiRedux className="w-10 h-10" />,
   },
   {
+    skillName: "Localforage",
+    icon: <FaDatabase className="w-10 h-10" />,
+  },
+  {
     skillName: "RTK Query",
     icon: <SiRedux className="w-10 h-10" />,
   },
@@ -90,5 +99,30 @@ export const skills = [
   {
     skillName: "React Icon",
     icon: <FaReact className="w-10 h-10" />,
+  },
+  {
+    skillName: "SQLite",
+    icon: <SiSqlite className="w-10 h-10" />,
+  },
+  {
+    skillName: "Angular.js",
+    icon: <FaAngular className="w-10 h-10" />,
+  },
+  {
+    skillName: "IndexedDB",
+    icon: <FaDatabase className="w-10 h-10" />,
+  },
+  {
+    skillName: "Sql.js",
+    icon: <BsFiletypeSql className="w-10 h-10" />,
+  },
+
+  {
+    skillName: "DexieDB",
+    icon: <FaDatabase className="w-10 h-10" />,
+  },
+  {
+    skillName: "Cordova",
+    icon: <SiApachecordova className="w-10 h-10" />,
   },
 ];

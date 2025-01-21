@@ -17,4 +17,10 @@ export const projects = [
       "List of frontend side projects practice with HTML, CSS, React, Tailwind, SCSS, and JavaScript",
     link: "https://github.com/Satish9047/tailwind-projects",
   },
+  {
+    projectName: "Todo App",
+    description:
+      "List of frontend side projects practice with HTML, CSS, Angular.js, angular 19, Bootstrap, SQLite, IndexedDB, Sql.js, localforage, cordova, capacitor, PWA and JavaScript",
+    link: "https://github.com/Satish9047/IT-Himalaya",
+  },
 ];
