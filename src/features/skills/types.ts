@@ -1,4 +1,6 @@
-export interface Skill {
+import { IconType } from "react-icons";
+
+export type Skill = {
   name: string;
-  icon: string;
+  icon: IconType;
 }

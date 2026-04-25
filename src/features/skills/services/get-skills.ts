@@ -1,18 +1,36 @@
 import type { Skill } from "../types";
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+} from "react-icons/fa";
+
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiExpress,
+  SiPostgresql,
+  SiMongodb,
+  SiPrisma,
+  SiTailwindcss,
+  SiRedux,
+  SiAngular,
+  SiApachecordova,
+} from "react-icons/si";
 
 export function getSkills(): Skill[] {
   return [
-    { name: "React", icon: "React" },
-    { name: "Next.js", icon: "Next" },
-    { name: "TypeScript", icon: "TS" },
-    { name: "Node.js", icon: "Node" },
-    { name: "Express", icon: "API" },
-    { name: "PostgreSQL", icon: "SQL" },
-    { name: "MongoDB", icon: "DB" },
-    { name: "Prisma", icon: "ORM" },
-    { name: "Tailwind CSS", icon: "TW" },
-    { name: "Redux Toolkit", icon: "State" },
-    { name: "Angular", icon: "NG" },
-    { name: "Cordova", icon: "PWA" },
+    { name: "React", icon: FaReact },
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Node.js", icon: FaNodeJs },
+    { name: "Express", icon: SiExpress },
+    { name: "PostgreSQL", icon: SiPostgresql },
+    { name: "MongoDB", icon: SiMongodb },
+    { name: "Prisma", icon: SiPrisma },
+    { name: "Tailwind CSS", icon: SiTailwindcss },
+    { name: "Redux Toolkit", icon: SiRedux },
+    { name: "Angular", icon: SiAngular },
+    { name: "Cordova", icon: SiApachecordova },
   ];
 }

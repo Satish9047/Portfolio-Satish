@@ -15,9 +15,9 @@ export async function HeroSection() {
     >
       <div className="space-y-8">
         <div className="space-y-5">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
+          {/* <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--accent)]">
             Available for impactful product work
-          </p>
+          </p> */}
           <div className="space-y-4">
             <h1 className="max-w-3xl text-4xl font-black tracking-tight sm:text-5xl lg:text-6xl">
               {heroContent.name}
