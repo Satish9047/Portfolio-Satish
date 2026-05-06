@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 Personal Portfolio Website
 
-## Getting Started
+A modern and responsive **portfolio website** built with **Next.js**, showcasing my projects, experience, and skills.
+It also includes a **contact form with email functionality** for easy communication.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+* 🧑‍💻 **About Me Section** – Introduction, skills, and background
+* 📁 **Projects Showcase** – Highlight of my best work with details
+* 🎓 **Education & Experience** – Academic and professional journey
+* 📬 **Contact Form** – Users can send messages directly via email
+* ⚡ **Fast & SEO Friendly** – Powered by Next.js
+* 📱 **Responsive Design** – Works on all devices
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** Next.js, React
+* **Styling:** Tailwind CSS (or your styling system)
+* **Backend:** Next.js API Routes / Server Actions
+* **Email Service:**  Resend / Nodemailer 
+* **Deployment:**  Vercel 
+
+---
+
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/satish9047/portfolio-satish.git
+cd /portfolio-satish
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open in browser:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+---
 
-## Learn More
+## 🔐 Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file and add:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+# Example
+SMTP_PASS=
+SMTP_USER=
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+> ⚠️ Replace with your actual email service credentials.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📬 Contact Form
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The contact form allows visitors to send messages directly to my email.
+It uses secure server-side logic to handle submissions and prevent spam.
+
+
+---
+
+## 🌍 Live Demo
+
+👉 https://satishprajapati.com.np
+
+---
+
+## 🤝 Contributing
+
+This is a personal project, but feel free to fork and use it as inspiration.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
+
+---
+
+## 👤 Author
+
+**Satish Prajapati**
+
+* GitHub: https://github.com/Satish9047
+
+---
+
+⭐ If you like this project, consider giving it a star!
