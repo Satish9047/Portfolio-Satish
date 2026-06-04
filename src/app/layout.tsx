@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { JetBrains_Mono, Inter } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider, ThemeScript } from "@/components/shared/theme-provider";
 import "@/styles/globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -19,13 +19,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Satish Prajapati | Frontend-Focused Full-Stack Developer",
+  title: "Satish Prajapati | Frontend Architect & Swiss Designer",
   description:
-    "Performance-focused Next.js portfolio for Satish Prajapati, featuring structured sections for experience, skills, projects, and contact.",
+    "High-performance neo-grotesque Swiss Style portfolio for Satish Prajapati, built with Next.js, Tailwind CSS, and GSAP.",
   openGraph: {
     title: "Satish Prajapati Portfolio",
     description:
-      "Frontend-focused full-stack developer building fast, maintainable web applications.",
+      "Frontend Architect building high-performance web applications with precision design.",
     type: "website",
   },
 };
@@ -40,7 +40,7 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className={`${jakarta.variable} ${jetbrainsMono.variable}`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} bg-[var(--background)] text-[var(--foreground)] antialiased font-sans`}>
         <ThemeProvider>
           <div className="min-h-screen">
             <SiteHeader />

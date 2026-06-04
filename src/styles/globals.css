@@ -4,28 +4,24 @@
 
 :root {
   color-scheme: light;
-  --background: #f4f1ea;
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-strong: rgba(255, 255, 255, 0.92);
-  --border: rgba(15, 23, 42, 0.08);
-  --foreground: #111827;
-  --muted: #4b5563;
-  --accent: #0f766e;
-  --accent-foreground: #f0fdfa;
-  --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  --background: #F8F9FA;
+  --foreground: #111111;
+  --muted: #555555;
+  --accent: #FF3B30;
+  --accent-foreground: #FFFFFF;
+  --border: rgba(17, 17, 17, 0.12);
+  --border-strong: #111111;
 }
 
 .dark {
   color-scheme: dark;
-  --background: #09111f;
-  --surface: rgba(15, 23, 42, 0.78);
-  --surface-strong: rgba(15, 23, 42, 0.92);
-  --border: rgba(148, 163, 184, 0.16);
-  --foreground: #e5eef8;
-  --muted: #94a3b8;
-  --accent: #5eead4;
-  --accent-foreground: #042f2e;
-  --shadow: 0 24px 60px rgba(2, 6, 23, 0.35);
+  --background: #111111;
+  --foreground: #F8F9FA;
+  --muted: #A0A0A0;
+  --accent: #FF3B30;
+  --accent-foreground: #FFFFFF;
+  --border: rgba(248, 249, 250, 0.15);
+  --border-strong: #F8F9FA;
 }
 
 *,
@@ -42,10 +38,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    radial-gradient(circle at top, rgba(15, 118, 110, 0.12), transparent 38%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 40%),
-    var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   text-rendering: optimizeLegibility;
 }
@@ -56,8 +49,8 @@ a {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--accent) 32%, white);
-  color: var(--foreground);
+  background: var(--accent);
+  color: var(--accent-foreground);
 }
 
 @layer base {
@@ -68,17 +61,13 @@ a {
 
 @layer utilities {
   .surface {
-    background-color: var(--surface);
+    background-color: var(--background);
     border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(20px);
   }
 
   .surface-strong {
-    background-color: var(--surface-strong);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(18px);
+    background-color: var(--background);
+    border: 1px solid var(--border-strong);
   }
 
   .text-muted {
@@ -88,4 +77,14 @@ a {
   .section-anchor {
     scroll-margin-top: 6rem;
   }
+}
+
+/* Custom Utilities for Swiss Typography and Layouts */
+.clip-path-container {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip-reveal-line {
+  display: block;
+  transform: translateY(105%);
 }

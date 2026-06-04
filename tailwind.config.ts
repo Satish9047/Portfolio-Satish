@@ -12,8 +12,15 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-jakarta)"],
+        sans: ["var(--font-inter)"],
         mono: ["var(--font-mono)"],
+      },
+      colors: {
+        swiss: {
+          red: "#FF3B30",
+          black: "#111111",
+          gray: "#F8F9FA",
+        }
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

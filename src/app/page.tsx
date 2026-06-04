@@ -5,6 +5,8 @@ import { AboutSection } from "@/features/about/components/about-section";
 import { SkillsSection } from "@/features/skills/components/skills-section";
 import { ContactSection } from "@/features/contact/components/contact-section";
 
+import { getCvDownloadCount } from "@/lib/pocketbase";
+
 const ProjectsSection = dynamic(
   () =>
     import("@/features/projects/components/projects-section").then(
@@ -13,7 +15,7 @@ const ProjectsSection = dynamic(
   {
     loading: () => (
       <section className="section-anchor">
-        <div className="surface rounded-[1.75rem] p-6 text-sm text-muted">
+        <div className="surface p-6 text-sm text-muted">
           Loading projects...
         </div>
       </section>
@@ -21,11 +23,13 @@ const ProjectsSection = dynamic(
   },
 );
 
-export default function HomePage() {
+export default async function HomePage() {
+  const downloadCount = await getCvDownloadCount().catch(() => 0);
+
   return (
     <Container>
-      <div className="space-y-20 pb-20">
-        <HeroSection />
+      <div className="space-y-16 pb-20">
+        <HeroSection downloadCount={downloadCount} />
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />

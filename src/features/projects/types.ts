@@ -3,4 +3,5 @@ export interface Project {
   summary: string;
   href: string;
   stack: string[];
+  image: string;
 }

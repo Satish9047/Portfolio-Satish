@@ -11,11 +11,20 @@ import {
   SiExpress,
   SiPostgresql,
   SiMongodb,
+  SiDrizzle,
   SiPrisma,
   SiTailwindcss,
   SiRedux,
   SiAngular,
-  SiApachecordova,
+  SiGithub,
+  SiSvelte,
+  SiAstro,
+  SiFormik,
+  SiZod,
+  SiClaude,
+  SiGsap,
+  SiShadcnui,
+  SiCisco
 } from "react-icons/si";
 
 export function getSkills(): Skill[] {
@@ -27,10 +36,19 @@ export function getSkills(): Skill[] {
     { name: "Express", icon: SiExpress },
     { name: "PostgreSQL", icon: SiPostgresql },
     { name: "MongoDB", icon: SiMongodb },
+    { name: "Drizzle", icon: SiDrizzle },
     { name: "Prisma", icon: SiPrisma },
     { name: "Tailwind CSS", icon: SiTailwindcss },
     { name: "Redux Toolkit", icon: SiRedux },
     { name: "Angular", icon: SiAngular },
-    { name: "Cordova", icon: SiApachecordova },
+    { name: "GitHub", icon: SiGithub },
+    { name: "Svelte", icon: SiSvelte },
+    { name: "Astro", icon: SiAstro },
+    { name: "Formik", icon: SiFormik },
+    { name: "Zod", icon: SiZod },
+    { name: "Claude", icon: SiClaude },
+    { name: "GSAP", icon: SiGsap },
+    { name: "Shadcn UI", icon: SiShadcnui },
+    { name: "Cisco", icon: SiCisco },
   ];
 }

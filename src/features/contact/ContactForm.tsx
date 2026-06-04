@@ -7,7 +7,7 @@ import {
   sanitizeContactForm,
   validateContactForm,
 } from "@/features/contact/contact.schema";
-import { submitContactForm } from "@/features/contact/contact.service";
+import { sendContactEmail } from "@/app/actions/sendEmail";
 import { cn } from "@/lib/utils";
 
 const initialValues: ContactFormValues = {
@@ -23,7 +23,7 @@ function FieldError({ error }: { error?: string }) {
     return null;
   }
 
-  return <p className="text-sm text-red-500">{error}</p>;
+  return <p className="text-[10px] font-bold uppercase tracking-wide text-swiss-red mt-1">{error}</p>;
 }
 
 export function ContactForm() {
@@ -71,12 +71,20 @@ export function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      await submitContactForm(sanitizedValues);
-      setValues(initialValues);
-      setStatus({
-        type: "success",
-        message: "Message sent successfully. I will get back to you soon.",
-      });
+      const result = await sendContactEmail(sanitizedValues);
+      
+      if (result.success) {
+        setValues(initialValues);
+        setStatus({
+          type: "success",
+          message: "Message sent successfully.",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          message: result.error,
+        });
+      }
     } catch (error) {
       setStatus({
         type: "error",
@@ -88,14 +96,14 @@ export function ContactForm() {
   };
 
   return (
-    <form className="grid gap-5" onSubmit={handleSubmit} noValidate>
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="grid gap-2">
-          <span className="text-sm font-semibold">Name</span>
+    <form className="space-y-8" onSubmit={handleSubmit} noValidate>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <label className="grid gap-1">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Name</span>
           <input
             value={values.name}
             onChange={handleChange("name")}
-            className="surface rounded-2xl px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full border-b border-[var(--foreground)] bg-transparent rounded-none py-2 text-sm font-semibold outline-none focus:border-swiss-red transition-colors duration-150 text-[var(--foreground)]"
             name="name"
             autoComplete="name"
             disabled={isSubmitting}
@@ -103,12 +111,12 @@ export function ContactForm() {
           <FieldError error={errors.name} />
         </label>
 
-        <label className="grid gap-2">
-          <span className="text-sm font-semibold">Email</span>
+        <label className="grid gap-1">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Email</span>
           <input
             value={values.email}
             onChange={handleChange("email")}
-            className="surface rounded-2xl px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full border-b border-[var(--foreground)] bg-transparent rounded-none py-2 text-sm font-semibold outline-none focus:border-swiss-red transition-colors duration-150 text-[var(--foreground)]"
             name="email"
             type="email"
             autoComplete="email"
@@ -117,12 +125,12 @@ export function ContactForm() {
           <FieldError error={errors.email} />
         </label>
 
-        <label className="grid gap-2">
-          <span className="text-sm font-semibold">Phone</span>
+        <label className="grid gap-1">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Phone</span>
           <input
             value={values.phone}
             onChange={handleChange("phone")}
-            className="surface rounded-2xl px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full border-b border-[var(--foreground)] bg-transparent rounded-none py-2 text-sm font-semibold outline-none focus:border-swiss-red transition-colors duration-150 text-[var(--foreground)]"
             name="phone"
             autoComplete="tel"
             disabled={isSubmitting}
@@ -130,12 +138,12 @@ export function ContactForm() {
           <FieldError error={errors.phone} />
         </label>
 
-        <label className="grid gap-2">
-          <span className="text-sm font-semibold">Subject</span>
+        <label className="grid gap-1">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Subject</span>
           <input
             value={values.subject}
             onChange={handleChange("subject")}
-            className="surface rounded-2xl px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full border-b border-[var(--foreground)] bg-transparent rounded-none py-2 text-sm font-semibold outline-none focus:border-swiss-red transition-colors duration-150 text-[var(--foreground)]"
             name="subject"
             disabled={isSubmitting}
           />
@@ -143,35 +151,35 @@ export function ContactForm() {
         </label>
       </div>
 
-      <label className="grid gap-2">
-        <span className="text-sm font-semibold">Message</span>
+      <label className="grid gap-1">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Message</span>
         <textarea
           value={values.message}
           onChange={handleChange("message")}
-          className="surface min-h-40 rounded-[1.5rem] px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+          className="w-full border-b border-[var(--foreground)] bg-transparent rounded-none py-2 min-h-24 text-sm font-semibold outline-none focus:border-swiss-red transition-colors duration-150 text-[var(--foreground)] resize-y"
           name="message"
           disabled={isSubmitting}
         />
         <FieldError error={errors.message} />
       </label>
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-4">
         <button
           type="submit"
           disabled={isSubmitting}
           className={cn(
-            "inline-flex min-w-36 items-center justify-center rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--accent-foreground)] transition-transform duration-200 hover:-translate-y-0.5",
-            isSubmitting && "cursor-not-allowed opacity-70 hover:translate-y-0",
+            "inline-flex justify-center border border-[var(--foreground)] bg-[var(--foreground)] px-8 py-4 text-[10px] font-bold uppercase tracking-widest text-[var(--background)] hover:bg-swiss-red hover:border-swiss-red transition-colors duration-200",
+            isSubmitting && "cursor-not-allowed opacity-60 hover:bg-[var(--foreground)] hover:border-[var(--foreground)]",
           )}
         >
-          {isSubmitting ? "Sending..." : "Send message"}
+          {isSubmitting ? "Sending..." : "Send Message"}
         </button>
 
         {status.type !== "idle" ? (
           <p
             className={cn(
-              "text-sm",
-              status.type === "success" ? "text-emerald-600" : "text-red-500",
+              "text-[10px] font-bold uppercase tracking-widest",
+              status.type === "success" ? "text-emerald-600" : "text-swiss-red",
             )}
           >
             {status.message}

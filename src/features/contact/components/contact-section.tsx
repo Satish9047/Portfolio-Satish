@@ -1,42 +1,57 @@
 import { Section } from "@/components/layout/section";
-import { ButtonLink } from "@/components/ui/button";
 import { ContactForm } from "@/features/contact/ContactForm";
-// import { contactLinks } from "../content";
 
 export function ContactSection() {
   return (
     <Section
       id="contact"
-      eyebrow="Contact"
-      title="Clear calls to action with minimal friction."
-      description="This keeps primary contact routes prominent while staying simple enough for a single-page portfolio."
+      eyebrow="Inquiries"
+      title="Initiate Collaboration"
+      description="Available for select freelance contracts, frontend architecture roles, and full-stack integration projects."
     >
-      <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="surface rounded-[2rem] p-6 sm:p-8">
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <h3 className="text-2xl font-bold">Let&apos;s build something useful.</h3>
-              <p className="leading-7 text-muted">
-                I am available for frontend engineering, full-stack product work, and performance-focused UI implementation.
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        {/* Left Side: Contact Form - Spans 1 to 7 */}
+        <div className="lg:col-span-7">
+          <ContactForm />
+        </div>
+
+        {/* Right Side: Meta Info / Live Tracking dot - Spans 8 to 12 */}
+        <div className="lg:col-span-5 space-y-8 lg:pl-6 border-t lg:border-t-0 lg:border-l border-[var(--border)] pt-8 lg:pt-0">
+          <div className="space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Live Status</span>
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-swiss-red opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-swiss-red"></span>
+              </span>
+              <p className="text-xs font-bold uppercase tracking-wide text-[var(--foreground)]">
+                Available for contract bookings
               </p>
             </div>
-            {/*<div className="flex flex-wrap gap-3">*/}
-            {/*  {contactLinks.map((link) => (*/}
-            {/*    <ButtonLink key={link.label} href={link.href} variant="secondary">*/}
-            {/*      {link.label}*/}
-            {/*    </ButtonLink>*/}
-            {/*  ))}*/}
-            {/*</div>*/}
           </div>
-        </div>
-        <div className="surface rounded-[2rem] p-6 sm:p-8">
-          <div className="mb-6 space-y-2">
-            <h3 className="text-2xl font-bold">Send a message</h3>
-            <p className="leading-7 text-muted">
-              Use the form for project inquiries, collaborations, or freelance work.
+
+          <div className="space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Direct Inquiries</span>
+            <p className="text-sm font-semibold uppercase tracking-tight text-[var(--foreground)]">
+              <a href="mailto:satishprajapati930@gmail.com" className="hover:text-swiss-red transition-colors">
+                satishprajapati930@gmail.com
+              </a>
             </p>
           </div>
-          <ContactForm />
+
+          <div className="space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Call / Text</span>
+            <p className="text-sm font-semibold uppercase tracking-tight text-[var(--foreground)]">
+              +977 9840252791
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Location Details</span>
+            <p className="text-sm font-semibold uppercase tracking-tight text-[var(--foreground)]">
+              Bhaktapur, Nepal (GMT +5:45)
+            </p>
+          </div>
         </div>
       </div>
     </Section>

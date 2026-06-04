@@ -2,7 +2,7 @@ import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 const baseClassName =
-  "inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]";
+  "inline-flex items-center justify-center border border-[var(--foreground)] px-6 py-3 text-[10px] font-bold uppercase tracking-widest transition-colors duration-200";
 
 interface ButtonLinkProps extends ComponentPropsWithoutRef<"a"> {
   children: ReactNode;
@@ -20,8 +20,8 @@ export function ButtonLink({
       className={cn(
         baseClassName,
         variant === "primary"
-          ? "bg-[var(--accent)] text-[var(--accent-foreground)]"
-          : "surface text-[var(--foreground)]",
+          ? "bg-[var(--foreground)] text-[var(--background)] hover:bg-swiss-red hover:border-swiss-red"
+          : "bg-transparent text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)]",
         className,
       )}
       {...props}

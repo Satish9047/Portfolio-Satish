@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, type MouseEvent } from "react";
+import { type MouseEvent } from "react";
 import { MdDownload } from "react-icons/md";
-// import { trackCvDownload } from "@/features/cv/cv.service";
 import { cn } from "@/lib/utils";
 
 interface DownloadButtonProps {
@@ -25,19 +24,18 @@ export function DownloadButton({ initialDownloadCount }: DownloadButtonProps) {
   };
 
   return (
-    <div className="space-y-2 flex justify-between items-center">
+    <div className="flex items-center gap-4">
       <a
         href="/cv/my-cv.pdf"
         download
         onClick={handleClick}
         className={cn(
-          "inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--accent-foreground)] transition-transform duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]",
+          "inline-flex items-center justify-center gap-2 border border-[var(--foreground)] bg-[var(--foreground)] px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-[var(--background)] hover:bg-swiss-red hover:border-swiss-red transition-colors duration-200"
         )}
       >
-        <MdDownload className="text-lg" />
+        <MdDownload className="text-sm" />
         <span>Download CV</span>
       </a>
-      {/*<p className="text-sm text-muted">Downloaded {downloadCount} times</p>*/}
     </div>
   );
 }
